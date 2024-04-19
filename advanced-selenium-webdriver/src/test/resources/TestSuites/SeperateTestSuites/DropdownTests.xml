@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="DropdownTestSuite" verbose="1" parallel="tests" thread-count="2">
+
+	<test name="SelectedOptionTest - Option 1">
+        <parameter name="value" value="1"></parameter>
+		<classes>
+			<class name="com.herokuapp.theinternet.dropdownpagetests.DropdownTests">
+			</class>
+		</classes>
+	</test>
+
+    <test name="SelectedOptionTest - Option 2">
+        <parameter name="value" value="2"></parameter>
+		<classes>
+			<class name="com.herokuapp.theinternet.dropdownpagetests.DropdownTests">
+			</class>
+		</classes>
+	</test>
+
+</suite>

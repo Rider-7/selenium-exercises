@@ -1,0 +1,3 @@
+testNumber,username,password,expectedErrorMessage
+1,tomsmith,incorrectPassword,Your password is invalid!
+2,incorrectUsername,SuperSecretPassword!,Your username is invalid!

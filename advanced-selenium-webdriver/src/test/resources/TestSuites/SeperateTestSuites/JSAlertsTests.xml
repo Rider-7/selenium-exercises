@@ -1,0 +1,67 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="JSAlertsTestSuite" verbose="1" parallel="tests" thread-count="3">
+
+	<test name="AlertTest">
+		<classes>
+			<class name="com.herokuapp.theinternet.jsalertspagetests.JSAlertsTests">
+                <methods>
+                    <include name="AlertTest"/>
+                </methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="ConfirmTest - Accept">
+		<parameter name="isAccepted" value="true"/>
+		<parameter name="expectedResultText" value="You clicked: Ok"/>
+		<classes>
+			<class name="com.herokuapp.theinternet.jsalertspagetests.JSAlertsTests">
+				<methods>
+					<include name="ConfirmTest"/>
+				</methods>
+				</class>
+		</classes>
+	</test>
+
+	<test name="ConfirmTest - Dismiss">
+		<parameter name="isAccepted" value="false"/>
+		<parameter name="expectedResultText" value="You clicked: Cancel"/>
+		<classes>
+			<class name="com.herokuapp.theinternet.jsalertspagetests.JSAlertsTests">
+				<methods>
+					<include name="ConfirmTest"/>
+				</methods>
+				</class>
+		</classes>
+	</test>
+
+	<test name="PromptTest - Accept w/ Input">
+		<parameter name="isAccepted" value="true"/>
+		<parameter name="inputText" value="Howdy!"/>
+		<parameter name="expectedAlertText" value="I am a JS prompt"/>
+		<parameter name="expectedResultText" value="You entered: Howdy!"/>
+		<classes>
+			<class name="com.herokuapp.theinternet.jsalertspagetests.JSAlertsTests">
+				<methods>
+					<include name="PromptTest"/>
+				</methods>
+				</class>
+		</classes>
+	</test>
+
+	<test name="PromptTest - Dismiss w/ Input">
+		<parameter name="isAccepted" value="false"/>
+		<parameter name="inputText" value="Howdy!"/>
+		<parameter name="expectedAlertText" value="I am a JS prompt"/>
+		<parameter name="expectedResultText" value="You entered: null"/>
+		<classes>
+			<class name="com.herokuapp.theinternet.jsalertspagetests.JSAlertsTests">
+				<methods>
+					<include name="PromptTest"/>
+				</methods>
+				</class>
+		</classes>
+	</test>
+
+</suite>
